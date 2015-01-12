@@ -17,4 +17,5 @@ group :development, :test do
   gem 'web-console', '~> 2.0' # Access console using <%= console %> in view
   gem 'spring'
   gem 'rspec-rails', '~> 3.0'
+  gem 'capybara'
 end
