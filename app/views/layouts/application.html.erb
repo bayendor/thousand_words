@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ThousandWords</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <title>A Thousand Words</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class="<%= controller_name %>_<%= action_name %>">
+  <div id="main">
+    <%= render partial: "layouts/nav_bar" %>
+  </div>
+    <div class="container">
 
-<%= yield %>
+      <%= render 'layouts/notices' %>
 
+      <%= yield %>
+    </div>
+  </div>
 </body>
 </html>
+
