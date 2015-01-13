@@ -1,6 +1,13 @@
 <div class="container text-center">
   <img src="../logo.jpg" width="640" height="425" class="img-rounded">
+
   <h2 class="text-info">Sign Up</h2>
+    <% if !current_user.nil? %>
+      <p>Click The link below to send a tweet.</p>
+      <%= link_to "Send a Tweet", new_tweet_path %>
+    <% else %>
+      <p>You must log in to send a tweet.</p>
+    <% end %>
   <h5 class="text-inf">Version 0.0.1</h5>
   </br>
   <h6 class="text-info">&copy; 2015 Tycho Metadata Analytics, LLC</h6>
