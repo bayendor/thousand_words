@@ -24,15 +24,7 @@ class ApplicationController < ActionController::Base
 
   def authenticate_user!
     unless current_user
-      redirect_to root_url, alert: 'You need to sign in for access to this page.'
+      redirect_to root_url, alert: 'You need to sign in to access this page.'
     end
   end
 end
-
-# def current_user
-#   begin
-#     @current_user ||= User.find(session[:user_id]) if session[:user_id]
-#   rescue Exception => e
-#     nil
-#   end
-# end
