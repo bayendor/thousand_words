@@ -1,4 +1,13 @@
 class TweetsController < ApplicationController
+
+  def index
+    @feed = feed
+  end
+
+  def feed(term='#ruby')
+    @tweets = Tweet.feed.search(term).take(5)
+  end
+
   def new
   end
 
