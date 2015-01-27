@@ -50,16 +50,8 @@
   <div class="col-md-5">
   <div class="panel panel-default">
     <div class="panel-heading">Twitter Feed</div>
-    <div class="panel-body">
-      <ul class="list-group">
-      <% @feed.each do |t| %>
-        <li class="list-group-item"><h5>User: <%= t.user.name %></h5></li>
-        <li class="list-group-item"><p>ID: <%= t.id %></p></li>
-        <li class="list-group-item"><p>Text: <%= t.text %></p></li>
-      <% end %>
-      </ul>
+      <%= render 'layouts/tweets' %>
     </div>
-  </div>
 </div>
 </div>
 
