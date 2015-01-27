@@ -4,8 +4,12 @@ class TweetsController < ApplicationController
     @feed = feed
   end
 
-  def feed(term='#ruby')
-    @tweets = Tweet.feed.search(term).take(5)
+  def feed(term='#ruby', count=5)
+    @tweets = Tweet.feed.search(term).take(count)
+  end
+
+  def image_feed(tweets)
+    @images = tweets.with_images
   end
 
   def new
@@ -17,5 +21,11 @@ class TweetsController < ApplicationController
 
   def twitter_params
     params.require(:tweet).permit(:message)
+  end
+
+  private
+
+  def with_images
+    self.select { |tweet| tweet.media.any? }
   end
 end
