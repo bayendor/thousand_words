@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.2.0'
+gem 'rails', '4.2.1'
 
 gem 'dotenv-rails', :groups => [:development, :test]
 gem 'pg'
